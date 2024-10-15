@@ -5,7 +5,9 @@ import Opinions from './Opinions'
 import Footer from './Footer'
 import Brands from './Brands'
 import Clients from './Clients'
+import Work from "./Work"
 import Features from './Features'
+
 export default function index() {
     return (
         <>
@@ -16,9 +18,10 @@ export default function index() {
             <div className="  max-w-7xl mx-auto sm:px-6 lg:px-8 md:px-4">
                 <Brands />
                 <Opinions />
-                <Features/>
+                <Features />
                 <Clients />
                 <Articles />
+                <Work />
                 <ContactUs />
                 <Footer />
             </div>

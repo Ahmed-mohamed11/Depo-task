@@ -15,8 +15,8 @@ export default function Features() {
     }
 
     return (
-        <div className="container mx-auto px-4 my-12 py-16">
-            <div className="flex flex-col lg:flex-row min-h-screen gap-10 items-start justify-between">
+        <div className="container mx-auto px-4 mt-12 pt-16">
+            <div className="flex flex-col lg:flex-row   gap-10 items-start justify-between">
                 {/* Features List */}
                 <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
                     <h2 className="text-4xl font-bold mb-10 text-gray-800">Website Features</h2>
