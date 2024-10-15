@@ -10,7 +10,7 @@ const articlesData = [
         linkUrl: "#",
         bgColor: "text-indigo-500",
         imageUrl: "https://tailwindcss.com/_next/static/media/headlessui@75.c1d50bc1.jpg",
-        altText: "Headless UI components",
+        altText: "Community Forum",
     },
     {
         id: 2,
