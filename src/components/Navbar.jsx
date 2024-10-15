@@ -27,7 +27,7 @@ function Navbar({ toggleDark, dark, onLogOut, themeDark }) {
           <Link to="/pricing" className="text-gray-800 dark:text-white hover:text-gray-500">
             {t(`navbar.users`)}
           </Link>
-          <Link to="/blog" className="text-gray-800 dark:text-white hover:text-gray-500">
+          <Link to="blog" className="text-gray-800 dark:text-white hover:text-gray-500">
             {t(`navbar.Blog`)}
           </Link>
         </div>
