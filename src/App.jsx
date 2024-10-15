@@ -6,8 +6,7 @@ import PricingPage from "./pages/pricing/index";
 import Navbar from "./components/Navbar";
 import { useI18nContext } from "./context/i18n-context";
 import HomePage from "./pages/home/index";
-import Blogs from "./pages/blogs/blogs";
-
+ 
 function App() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -77,10 +76,7 @@ function App() {
               />
 
 
-              <Route
-                path="/blog"
-                element={<Blogs />}
-              />
+              
               <Route
                 path='/pricing'
                 element={<PricingPage />}
