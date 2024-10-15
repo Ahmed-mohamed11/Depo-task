@@ -62,16 +62,18 @@ const renderStars = (rating) => {
 const Testimonials = () => {
   return (
     <div className="container mx-auto py-12 px-4 h-screen">
-      <div className="text-right mb-12">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800 text-right text-[3.5rem]">قالوا عنا</h2>
-      </div>
+      <div className="  w-full text-center">
+
+        <h1 className="text-2xl md:text-5xl font-bold mb-4">Online Business</h1>
+        <p className="text-lg md:text-xl mb-8 opacity-90">
+         We are here to help you grow Your Online Business
+        </p>
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Average Rating Section */}
         <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl text-center font-bold mb-5 mt-5">راي العملاء عنا</h2>
+            <h2 className="text-2xl text-center font-bold mb-5 mt-5">     Customer reviews about us </h2>
           <p className="text-gray-500 mb-6 text-center">
-            تلعب مراجعات العملاء دورًا حيويًا في التأثير على قرارات الشراء، حيث توفر وجهات نظر حقيقية من المستخدمين الفعليين. يمكن للمراجعات الإيجابية أن تعزز المصداقية وتبني الثقة.
-          </p>
+Customer reviews play a vital role in influencing purchasing decisions, providing real perspectives from actual users. Positive reviews can boost credibility and build trust.          </p>
           <div className="text-center mb-6 mt-4 bg-[#f6eece] p-4 rounded-xl">
             <h3 className="text-5xl font-bold mr-2 text-[#FBBF24]">{ratingsData.averageRating}</h3>
             <div className="flex items-center justify-center ">{renderStars(ratingsData.averageRating)}</div>
@@ -118,6 +120,7 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

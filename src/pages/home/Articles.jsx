@@ -57,7 +57,9 @@ export default function Articles() {
     return (
         <div className="mt-28">
             <div className="text-center">
-                <h1 className="text-3xl font-bold">احدث المقالات</h1>
+                <h1 className="text-4xl font-bold text-gray-800 mb-12">
+                    Speedy Digital <br />Experience Creation
+                </h1>
             </div>
             <ul className="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8">
                 {articles.map((article, index) => (

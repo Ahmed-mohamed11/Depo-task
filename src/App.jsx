@@ -55,8 +55,7 @@ function App() {
       <div className="flex">
         <div className="w-full">
           <Routes>
-            {/* Routes with Navbar */}
-            <Route
+             <Route
               path="/"
               element={
                 <>
