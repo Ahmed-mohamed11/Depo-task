@@ -1,7 +1,7 @@
 
 const Footer = ({ dark }) => {
   return (
-    <div className="bg-slate-600 text-slate-200 absolute top-[90%]">
+    <div className="bg-slate-600   absolute top-[90%]">
       <div
         className={`w-full
              bg-slate-200 pt-5`}
@@ -17,7 +17,7 @@ const Footer = ({ dark }) => {
             style={{ fontFamily: "Comfortaa" }}
             href="#"
           >
-            Privacy Policy
+            Privacy  
           </a>
           <p
             className={`mb-4 text-center sm:text-start duration-150 ease-linear
