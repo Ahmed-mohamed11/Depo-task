@@ -9,14 +9,14 @@ import borderHeroBottom2 from '../../images/gfx/4.webp';
 
 export default function Work() {
     return (
-        <div className="">
-            <div className="relative top-20 min-h-screen w-full flex items-center justify-center">
+        <div className=" ">
+            <div className="relative     w-full flex items-center justify-center">
                 <div className="max-w-7xl w-full mx-auto rounded-lg overflow-hidden flex flex-col items-center gap-32 md:flex-row">
-                    <div className="   p-4 md:p-8">
-                        <h2 className="text-4xl font-bold mb-4">                             Projecto | Easily Manage Projects and Your Team
+                    <div className="    md:p-8">
+                        <h2 className="text-4xl font-bold mb-4">  Easily Manage Projects and Your Team
                         </h2>
                         <p className="mb-8">
-                            Projecto allows you to manage and monitor your projects
+                            Allows you to manage and monitor your projects
                             quickly and efficiently. You don’t need to be an expert to
                             handle your work effectively.
                         </p>
@@ -30,9 +30,9 @@ export default function Work() {
                             <img
                                 src={HeroImage}
                                 alt="Project Management Dashboard"
-                                width={1000}
-                                height={500}
-                                className="rounded-lg shadow-md"
+                                width={2200}
+                                height={200}
+                                className="rounded-lg  shadow-md"
                             />
                             <div>
                                 <img

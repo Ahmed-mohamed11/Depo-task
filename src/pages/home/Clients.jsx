@@ -40,17 +40,13 @@ function Clients() {
     return (
         <div className="slider-container my-20">
             <div className="text-center my-10">
-                <h1 className="text-center text-4xl font-medium">عمــــــلاء تشرفنــــــا بالعمــــــل معهــــــم</h1>
-                <p className="text-slate-800 text-lg my-2">
-                    يرحب بروجكتو بكل عملائنا ونحن نفتخر بكوننا جزء منكم
-                </p>
+                <h1 className="text-center text-4xl font-bold"> Clients we have had the <br /> honor of working with      </h1>
+                 
             </div>
 
-            {/* Top Slider - Moves Left to Right */}
-            <Slider {...sliderSettings}>{renderClients()}</Slider>
+             <Slider {...sliderSettings}>{renderClients()}</Slider>
 
-            {/* Bottom Slider - Moves Right to Left */}
-            <Slider {...{ ...sliderSettings, rtl: true }} className="mt-8">
+             <Slider {...{ ...sliderSettings, rtl: true }} className="mt-8">
                 {renderClients()}
             </Slider>
         </div>

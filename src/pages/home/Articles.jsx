@@ -1,6 +1,4 @@
-// import React from 'react'
-
-const articlesData = [
+ const articlesData = [
     {
         id: 1,
         title: "Community Forum",
