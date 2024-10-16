@@ -9,7 +9,7 @@ import borderHeroBottom2 from '../../images/gfx/4.webp';
 
 export default function Work() {
     return (
-        <div className="bg-gradient-to-br from-[#f0f0f0] to-gray-50">
+        <div className="">
             <div className="relative top-20 min-h-screen w-full flex items-center justify-center">
                 <div className="max-w-7xl w-full mx-auto rounded-lg overflow-hidden flex flex-col items-center gap-32 md:flex-row">
                     <div className="   p-4 md:p-8">
@@ -24,7 +24,7 @@ export default function Work() {
                             Start Now for Free !
                         </button>
                     </div>
-                     
+
                     <div className="md:p-8 flex flex-col justify-between items-center">
                         <div className="space-y-4 relative">
                             <img
