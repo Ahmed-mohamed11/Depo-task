@@ -32,8 +32,7 @@ export default function UserProfile() {
                 </header>
 
                 <div className="flex gap-8">
-                    {/* Sidebar */}
-                    <aside className="w-72">
+                     <aside className="w-72">
                         <nav className="space-y-1 bg-white rounded-lg shadow-sm p-2">
                             {tabs.map((tab) => (
                                 <TabButton
@@ -47,8 +46,7 @@ export default function UserProfile() {
                         </nav>
                     </aside>
 
-                    {/* Main content */}
-                    <main className="flex-1 space-y-6">
+                     <main className="flex-1 space-y-6">
                         <Section title="Profile" onEdit={() => console.log('Edit profile')}>
                             <ProfileHeader
                                 name="Ahmed Mohamed"
