@@ -16,7 +16,7 @@ export default function Work() {
                         <h2 className="text-4xl font-bold mb-4">  Easily Manage Projects and Your Team
                         </h2>
                         <p className="mb-8">
-                           Allows you to manage and monitor your projects
+                            Allows you to manage and monitor your projects
                             quickly and efficiently. You don’t need to be an expert to
                             handle your work effectively.
                         </p>
@@ -24,7 +24,7 @@ export default function Work() {
                             Start Now for Free !
                         </button>
                     </div>
-                     
+
                     <div className="md:p-8 flex flex-col justify-between items-center">
                         <div className="space-y-4 relative">
                             <img
@@ -33,7 +33,7 @@ export default function Work() {
                                 width={2200}
                                 height={200}
                                 className="rounded-lg  shadow-md"
-                            /> 
+                            />
                             <div>
                                 <img
                                     src={InHero1}

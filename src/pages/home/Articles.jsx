@@ -71,7 +71,7 @@ function ArticleItem({ title, description, details, linkText, linkUrl, bgColor, 
 
 export default function Articles() {
     return (
-        <div className="mt-28 bg-gray-50 py-12">
+        <div className="mt-28  py-12">
             <div className="text-center">
                 <h1 className="text-4xl font-bold text-gray-800 mb-12">
                     Speedy Digital <br />Experience Creation
