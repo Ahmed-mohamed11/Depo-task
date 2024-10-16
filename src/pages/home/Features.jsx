@@ -1,5 +1,9 @@
 import { ChevronDown, BarChart2, Code, Move } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Features() {
     const features = [
@@ -14,17 +18,100 @@ export default function Features() {
         setActiveIndex(index === activeIndex ? null : index)
     }
 
+    useEffect(() => {
+        // GSAP ScrollTrigger Animations
+        gsap.from('.feature-card', {
+            scrollTrigger: {
+                trigger: '.feature-card',
+                start: 'top bottom',
+                end: 'top center',
+                scrub: true,
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power2.out',
+        })
+
+        gsap.from('.feature-preview', {
+            scrollTrigger: {
+                trigger: '.feature-preview',
+                start: 'top bottom',
+                end: 'top center',
+                scrub: true,
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1.5,
+            ease: 'power2.out',
+        })
+
+        gsap.from('.feature-header', {
+            scrollTrigger: {
+                trigger: '.feature-header',
+                start: 'top bottom',
+                end: 'top center',
+                scrub: true,
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1.5,
+            ease: 'power2.out',
+        })
+    }, [])
+
     return (
         <div className="container mx-auto px-4 mt-12 pt-16">
-            <div className="flex flex-col lg:flex-row   gap-10 items-start justify-between">
+            <div className="flex flex-col lg:flex-row gap-10 items-start justify-between">
+                {/* Feature Preview Card */}
+                <div className="w-full lg:w-2/3 bg-blue-500 rounded-3xl overflow-hidden shadow-2xl feature-preview">
+                    <div className="bg-gray-900 text-white p-4">
+                        <div className="flex gap-2">
+                            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                    </div>
+                    <div className="flex">
+                        <div className="w-1/4 bg-gray-900 text-white p-6">
+                            <ul className="space-y-2 text-gray-400">
+                                <li className="hover:text-white cursor-pointer">Design</li>
+                                <li className="hover:text-white cursor-pointer">All Screens</li>
+                                <li className="hover:text-white cursor-pointer">Neutral</li>
+                                <li className="hover:text-white cursor-pointer">Settings</li>
+                            </ul>
+                        </div>
+                        <div className="w-3/4 bg-white p-8">
+                            <h3 className="text-2xl font-bold mb-4 text-gray-800 feature-header">Feature Preview</h3>
+                            <div className="bg-yellow-200 rounded-lg p-6 mb-6 shadow-md">
+                                <div className="flex justify-center space-x-4 mb-4">
+                                    {[...Array(3)].map((_, i) => (
+                                        <div key={i} className="w-12 h-12 bg-yellow-400 rounded-lg shadow-lg transform rotate-45"></div>
+                                    ))}
+                                </div>
+                                <p className="text-gray-600">
+                                    This section provides a sneak peek into the key capabilities of our modules.
+                                </p>
+                            </div>
+                            <h4 className="text-lg font-semibold mb-2 text-gray-800">Expand Your Website’s Potential</h4>
+                            <p className="text-gray-600">
+                                Discover how our features can transform your website into a powerful, responsive platform.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Features List */}
                 <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
-                    <h2 className="text-4xl font-bold mb-10 text-gray-800">Website Features</h2>
+                    <h2 className="text-4xl font-bold mb-10 text-gray-800 feature-header">Website Features</h2>
                     <ul className="space-y-4">
                         {features.map((feature, index) => (
                             <li
                                 key={index}
-                                className="bg-gray-100 rounded-lg shadow-lg p-5 cursor-pointer transition duration-300 hover:bg-gray-200"
+                                className="bg-gray-100 rounded-lg shadow-lg p-5 cursor-pointer transition duration-300 hover:bg-gray-200 feature-card"
                                 onClick={() => toggleFeature(index)}
                             >
                                 <div className="flex items-center justify-between">
@@ -46,43 +133,6 @@ export default function Features() {
                     </ul>
                 </div>
 
-                {/* Feature Preview Card */}
-                <div className="w-full lg:w-2/3 bg-blue-500 rounded-3xl overflow-hidden shadow-2xl">
-                    <div className="bg-gray-900 text-white p-4">
-                        <div className="flex space-x-2">
-                            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                        </div>
-                    </div>
-                    <div className="flex">
-                        <div className="w-1/4 bg-gray-900 text-white p-6">
-                            <ul className="space-y-2 text-gray-400">
-                                <li className="hover:text-white cursor-pointer">Design</li>
-                                <li className="hover:text-white cursor-pointer">All Screens</li>
-                                <li className="hover:text-white cursor-pointer">Neutral</li>
-                                <li className="hover:text-white cursor-pointer">Settings</li>
-                            </ul>
-                        </div>
-                        <div className="w-3/4 bg-white p-8">
-                            <h3 className="text-2xl font-bold mb-4 text-gray-800">Feature Preview</h3>
-                            <div className="bg-yellow-200 rounded-lg p-6 mb-6 shadow-md">
-                                <div className="flex justify-center space-x-4 mb-4">
-                                    {[...Array(3)].map((_, i) => (
-                                        <div key={i} className="w-12 h-12 bg-yellow-400 rounded-lg shadow-lg transform rotate-45"></div>
-                                    ))}
-                                </div>
-                                <p className="text-gray-600">
-                                    This section provides a sneak peek into the key capabilities of our modules.
-                                </p>
-                            </div>
-                            <h4 className="text-lg font-semibold mb-2 text-gray-800">Expand Your Website’s Potential</h4>
-                            <p className="text-gray-600">
-                                Discover how our features can transform your website into a powerful, responsive platform.
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     )

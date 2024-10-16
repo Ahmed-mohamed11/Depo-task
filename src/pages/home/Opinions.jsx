@@ -60,69 +60,81 @@ const renderStars = (rating) => {
 };
 
 const Testimonials = () => {
+  const handleMouseEnter = () => {
+    const feedbackContainer = document.querySelector(".animate-scroll-feedback");
+    feedbackContainer.style.animationPlayState = "paused";
+  };
+
+  const handleMouseLeave = () => {
+    const feedbackContainer = document.querySelector(".animate-scroll-feedback");
+    feedbackContainer.style.animationPlayState = "running";
+  };
+
   return (
     <div className="container mx-auto py-12 px-4 h-screen">
-      <div className="  w-full text-center">
-
+      <div className="w-full text-center">
         <h1 className="text-2xl md:text-5xl font-bold mb-4">Online Business</h1>
-        <p className="text-lg md:text-xl mb-8 opacity-90">
-         We are here to help you grow Your Online Business
-        </p>
-      <div className="flex flex-col lg:flex-row gap-8">
-        {/* Average Rating Section */}
-        <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl text-center font-bold mb-5 mt-5">     Customer reviews about us </h2>
-          <p className="text-gray-500 mb-6 text-center">
-Customer reviews play a vital role in influencing purchasing decisions, providing real perspectives from actual users. Positive reviews can boost credibility and build trust.          </p>
-          <div className="text-center mb-6 mt-4 bg-[#f6eece] p-4 rounded-xl">
-            <h3 className="text-5xl font-bold mr-2 text-[#FBBF24]">{ratingsData.averageRating}</h3>
-            <div className="flex items-center justify-center ">{renderStars(ratingsData.averageRating)}</div>
-            <p className="text-gray-500">Based on {ratingsData.totalReviews} reviews</p>
-          </div>
-          <p className="text-gray-500 mb-6">{ratingsData.totalReviews} Reviews</p>
-          <div className="mb-6 space-y-4">
-            {ratingsData.detailedRatings.map((rating, index) => (
-              <div key={index} className="flex items-center justify-center mb-4">
-                <span className="text-gray-700 text-base mr-2">{rating.stars}</span>
-                <span className="text-orange-400 text-lg pr-3">★</span>
-                <div className="w-full bg-gray-200 h-3 rounded-full overflow-hidden mr-2">
-                  <div
-                    className="bg-orange-400 h-full"
-                    style={{ width: `${rating.count}%` }}
-                  ></div>
-                </div>
-                <span className="text-gray-700 text-base">{rating.count}%</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Customer Feedback Section with Smooth Infinite Scroll */}
-        <div className="w-full lg:w-1/2 overflow-hidden relative">
-          <div className="space-y-6 animate-scroll-feedback">
-            {customerFeedback.concat(customerFeedback).map((feedback, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg flex items-start">
-                <div className="flex-shrink-0 w-14 h-14 bg-gray-300 rounded-full flex items-center justify-center text-white mr-4">
-                  <span className="text-xl font-semibold">{feedback.name[0]}</span>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center justify-between mb-2">
-                    <div>
-                      <h3 className="text-md font-bold">{feedback.name}</h3>
-                      <p className="text-gray-400 text-sm">{feedback.date}</p>
-                    </div>
-                    <div>{renderStars(feedback.rating)}</div>
+        <p className="text-lg md:text-xl mb-8 opacity-90">We are here to help you grow Your Online Business</p>
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Average Rating Section */}
+          <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-2xl text-center font-bold mb-5 mt-5">Customer reviews about us</h2>
+            <p className="text-gray-500 mb-6 text-center">
+              Customer reviews play a vital role in influencing purchasing decisions, providing real perspectives from actual users. Positive reviews can boost credibility and build trust.
+            </p>
+            <div className="text-center mb-6 mt-4 bg-[#f6eece] p-4 rounded-xl">
+              <h3 className="text-5xl font-bold mr-2 text-[#FBBF24]">{ratingsData.averageRating}</h3>
+              <div className="flex items-center justify-center">{renderStars(ratingsData.averageRating)}</div>
+              <p className="text-gray-500">Based on {ratingsData.totalReviews} reviews</p>
+            </div>
+            <p className="text-gray-500 mb-6">{ratingsData.totalReviews} Reviews</p>
+            <div className="mb-6 space-y-4">
+              {ratingsData.detailedRatings.map((rating, index) => (
+                <div key={index} className="flex items-center justify-center mb-4">
+                  <span className="text-gray-700 text-base mr-2">{rating.stars}</span>
+                  <span className="text-orange-400 text-lg pr-3">★</span>
+                  <div className="w-full bg-gray-200 h-3 rounded-full overflow-hidden mr-2">
+                    <div className="bg-orange-400 h-full" style={{ width: `${rating.count}%` }}></div>
                   </div>
-                  <p className="text-gray-600">{feedback.text}</p>
+                  <span className="text-gray-700 text-base">{rating.count}%</span>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Customer Feedback Section with Smooth Infinite Scroll */}
+          <div
+            className="w-full lg:w-1/2 overflow-hidden relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="space-y-6 animate-scroll-feedback">
+              {customerFeedback.concat(customerFeedback).map((feedback, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-lg flex items-start">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gray-300 rounded-full flex items-center justify-center text-white mr-4">
+                    <span className="text-xl font-semibold">{feedback.name[0]}</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-2">
+                      <div>
+                        <h3 className="text-md font-bold">{feedback.name}</h3>
+                        <p className="text-gray-400 text-sm">{feedback.date}</p>
+                      </div>
+                      <div>{renderStars(feedback.rating)}</div>
+                    </div>
+                    <p className="text-gray-600">{feedback.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
 
 export default Testimonials;
+
+
+  

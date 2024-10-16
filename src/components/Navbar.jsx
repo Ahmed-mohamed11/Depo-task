@@ -1,5 +1,4 @@
-// Navbar.jsx
-import { Menu, Transition } from "@headlessui/react";
+ import { Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import { Bell, Moon, Sun, UserCircle } from "lucide-react";
 import logo from "../images/gfx/star-edit2.6cb42af93f3116775b22.gif";
@@ -14,7 +13,7 @@ const Navbar = ({ toggleDark, dark, onLogOut, themeDark }) => {
   const { t, language, changeLanguage } = useI18nContext();
 
   return (
-    <div className="w-full" dir={language === "ar" ? "rtl" : "ltr"}>
+    <div className="w-full bg-gray-200" dir={language === "ar" ? "rtl" : "ltr"}>
       <div className="flex justify-between items-center h-16 py-4 px-4">
         <img src={logo} alt="Logo" className="h-20 w-20" />
         <div className="flex items-center gap-8 font-bold text-xl">

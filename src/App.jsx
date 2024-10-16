@@ -51,7 +51,7 @@ function App() {
   }
 
   return (
-    <div className={`${isDarkMode ? "dark" : "light"}`} dir={language === "ar" ? "rtl" : "ltr"}>
+    <div className={`${isDarkMode ? "dark" : "light"}`} dir={language === "ar" ? "rtl" : "rtl"}>
       <div className="flex">
         <div className="w-full">
           <Routes>
@@ -60,7 +60,7 @@ function App() {
               element={
                 <>
                    <Navbar toggleDark={toggleDarkMode} dark={isDarkMode} />
-                  <div className="pt-0 px-4">
+                  <div className="">
                     <Routes>
                       <Route path="/" element={<HomePage />} />
                      </Routes>
