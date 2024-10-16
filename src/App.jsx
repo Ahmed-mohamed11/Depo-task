@@ -6,8 +6,8 @@ import Navbar from "./components/Navbar";
 import { useI18nContext } from "./context/i18n-context";
 import HomePage from "./pages/home/index";
 import Error404Modern from "./pages/error/404-modern";
-import UserProfile from "./pages/profile/UserProfile"; // Ensure this is the correct import
-import { Outlet } from "react-router-dom";
+ import { Outlet } from "react-router-dom";
+import Profile from "./pages/profile/profile";
 
 // Layout component to wrap the routes that should show the Navbar
 function Layout({ toggleDarkMode, isDarkMode }) {
@@ -76,7 +76,7 @@ function App() {
               element={<Layout toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />}
             >
               <Route path="/" element={<HomePage />} />
-              <Route path="/profile" element={<UserProfile />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
 
             <Route path="*" element={<Error404Modern />} />
