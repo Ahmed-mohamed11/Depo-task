@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import { useI18nContext } from "./context/i18n-context";
 import HomePage from "./pages/home/index";
 import Error404Modern from "./pages/error/404-modern";
-import Profile from "./pages/profile/Profile"
+import Profile from "./pages/profile/Profile";
 
 function App() {
   const navigate = useNavigate();
@@ -52,26 +52,25 @@ function App() {
   }
 
   return (
-    <div className={`${isDarkMode ? "dark" : "light"}`} dir={language === "ar" ? "rtl" : "rtl"}>
+    <div className={`${isDarkMode ? "dark" : "light"}`} dir={language === "ar" ? "rtl" : "ltr"}>
       <div className="flex">
         <div className="w-full">
           <Routes>
             <Route
-              path="/"
+              path="*"
               element={
                 <>
                   <Navbar toggleDark={toggleDarkMode} dark={isDarkMode} />
-                  <div className="pt-0 ">
+                  <div className="pt-0">
                     <Routes>
                       <Route path="/" element={<HomePage />} />
+                      <Route path="/profile" element={<Profile />} />
+                      <Route path="*" element={<Error404Modern />} />
                     </Routes>
                   </div>
                 </>
               }
             />
-
-            <Route path="/profile" element={<Profile />} />
-            <Route path="*" element={<Error404Modern />} />
           </Routes>
         </div>
       </div>
