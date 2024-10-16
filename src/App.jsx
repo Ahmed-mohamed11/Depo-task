@@ -6,8 +6,20 @@ import Navbar from "./components/Navbar";
 import { useI18nContext } from "./context/i18n-context";
 import HomePage from "./pages/home/index";
 import Error404Modern from "./pages/error/404-modern";
-import Profile from "./pages/profile/profile";
-  
+import Profile from "./pages/profile/Profile";
+import { Outlet } from "react-router-dom";
+
+function Layout({ toggleDarkMode, isDarkMode }) {
+  return (
+    <>
+      <Navbar toggleDark={toggleDarkMode} dark={isDarkMode} />
+      <div className="pt-0">
+        <Outlet />
+      </div>
+    </>
+  );
+}
+
 function App() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -56,21 +68,12 @@ function App() {
       <div className="flex">
         <div className="w-full">
           <Routes>
-            <Route
-              path="*"
-              element={
-                <>
-                  <Navbar toggleDark={toggleDarkMode} dark={isDarkMode} />
-                  <div className="pt-0">
-                    <Routes>
-                      <Route path="/" element={<HomePage />} />
-                      <Route path="/profile" element={<Profile />} />
-                      <Route path="*" element={<Error404Modern />} />
-                    </Routes>
-                  </div>
-                </>
-              }
-            />
+             <Route element={<Layout toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/profile" element={<Profile />} />
+            </Route>
+
+             <Route path="*" element={<Error404Modern />} />
           </Routes>
         </div>
       </div>

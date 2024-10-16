@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="relative">
              <HeroBackground />
           
-            <div className="absolute top-24 z-50 w-full flex flex-col items-end justify-end px-6 md:px-12 lg:px-24">
+            <div dir="rtl" className="absolute top-24 z-50 w-full flex flex-col items-end justify-end px-6 md:px-12 lg:px-24">
                 <HeroHeading />
                 <HeroButton />
             </div>
