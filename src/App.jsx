@@ -6,8 +6,8 @@ import Navbar from "./components/Navbar";
 import { useI18nContext } from "./context/i18n-context";
 import HomePage from "./pages/home/index";
 import Error404Modern from "./pages/error/404-modern";
-import Profile from "./pages/profile/Profile";
-
+import Profile from "./pages/profile/profile";
+  
 function App() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);

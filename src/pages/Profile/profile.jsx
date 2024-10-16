@@ -58,7 +58,7 @@ const Section = ({ title, children, onEdit }) => (
     </div>
 );
 
-export default function EnhancedUserProfile() {
+export default function Profile() {
     const [activeTab, setActiveTab] = useState('My Profile');
 
     return (
