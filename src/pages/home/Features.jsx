@@ -65,9 +65,9 @@ export default function Features() {
 
     return (
         <div className="container mx-auto px-4 mt-12 pt-16">
-            <div className="flex flex-col lg:flex-row gap-10 items-start justify-between">
+            <div className="flex flex-col lg:flex-row gap-10 items-center justify-between">
                 {/* Feature Preview Card */}
-                <div className="w-full lg:w-2/3 bg-blue-500 rounded-3xl overflow-hidden shadow-2xl feature-preview">
+                <div dir='ltr' className="w-full lg:w-2/3 bg-blue-500 rounded-3xl overflow-hidden shadow-2xl feature-preview">
                     <div className="bg-gray-900 text-white p-4">
                         <div className="flex gap-2">
                             <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -75,7 +75,7 @@ export default function Features() {
                             <div className="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
                     </div>
-                    <div className="flex">
+                    <div className="flex ">
                         <div className="w-1/4 bg-gray-900 text-white p-6">
                             <ul className="space-y-2 text-gray-400">
                                 <li className="hover:text-white cursor-pointer">Design</li>

@@ -1,4 +1,6 @@
-// import React from 'react';
+// import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { useEffect, useRef } from 'react';
 
 const ratingsData = {
   averageRating: 4.5,
@@ -60,15 +62,40 @@ const renderStars = (rating) => {
 };
 
 const Testimonials = () => {
-  const handleMouseEnter = () => {
-    const feedbackContainer = document.querySelector(".animate-scroll-feedback");
-    feedbackContainer.style.animationPlayState = "paused";
-  };
+  const feedbackContainerRef = useRef(null);
 
-  const handleMouseLeave = () => {
-    const feedbackContainer = document.querySelector(".animate-scroll-feedback");
-    feedbackContainer.style.animationPlayState = "running";
-  };
+  useEffect(() => {
+    const container = feedbackContainerRef.current;
+    const feedbackItems = container.children;
+
+     const tl = gsap.timeline({ repeat: -1, paused: true });
+
+    gsap.set(feedbackItems, { yPercent: 100 }); // Initial positioning off-screen
+
+    tl.to(feedbackItems, {
+      yPercent: -100,
+      stagger: {
+        amount: 1.5,
+        each: 1.5,
+        repeat: -1,
+        ease: "none",
+      },
+      duration: 1.5,
+      repeat: -1,
+      ease: "power1.inOut",
+    }).play();
+
+    const handleMouseEnter = () => tl.pause();
+    const handleMouseLeave = () => tl.play();
+
+    container.addEventListener('mouseenter', handleMouseEnter);
+    container.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      container.removeEventListener('mouseenter', handleMouseEnter);
+      container.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
 
   return (
     <div className="container mx-auto py-12 px-4 h-screen">
@@ -102,13 +129,9 @@ const Testimonials = () => {
             </div>
           </div>
 
-          {/* Customer Feedback Section with Smooth Infinite Scroll */}
-          <div
-            className="w-full lg:w-1/2 overflow-hidden relative"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="space-y-6 animate-scroll-feedback">
+          {/* Customer Feedback Section with GSAP Smooth Infinite Scroll */}
+          <div className="w-full lg:w-1/2 overflow-hidden relative">
+            <div ref={feedbackContainerRef} className="space-y-6 animate-scroll-feedback">
               {customerFeedback.concat(customerFeedback).map((feedback, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-lg flex items-start">
                   <div className="flex-shrink-0 w-14 h-14 bg-gray-300 rounded-full flex items-center justify-center text-white mr-4">
@@ -135,6 +158,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-
-
-  

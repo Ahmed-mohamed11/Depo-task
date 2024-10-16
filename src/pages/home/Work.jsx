@@ -12,18 +12,7 @@ export default function Work() {
         <div className=" ">
             <div className="relative     w-full flex items-center justify-center">
                 <div className="max-w-7xl w-full mx-auto rounded-lg overflow-hidden flex flex-col items-center gap-32 md:flex-row">
-                    <div className="    md:p-8">
-                        <h2 className="text-4xl font-bold mb-4">  Easily Manage Projects and Your Team
-                        </h2>
-                        <p className="mb-8">
-                            Allows you to manage and monitor your projects
-                            quickly and efficiently. You don’t need to be an expert to
-                            handle your work effectively.
-                        </p>
-                        <button className="  bg-sky-500 text-white rounded-full py-3  px-5 font-bold hover:bg-green-600 transition duration-300">
-                            Start Now for Free !
-                        </button>
-                    </div>
+                    
 
                     <div className="md:p-8 flex flex-col justify-between items-center">
                         <div className="space-y-4 relative">
@@ -88,6 +77,19 @@ export default function Work() {
                                 />
                             </div>
                         </div>
+                    </div>
+                    <div className="text-left  md:p-8">
+                        <h2 className="text-3xl font-sans font-bold mb-4">  
+                            Easily Manage Projects and Your Team
+                        </h2>
+                        <p className="mb-8">
+                            Allows you to manage and monitor your projects
+                            quickly and efficiently. You don’t need to be an expert to
+                            handle your work effectively.
+                        </p>
+                        <button className="  bg-sky-500 text-white rounded-full py-3  px-5 font-bold hover:bg-sky-600 transition duration-300">
+                            Start Now for Free !
+                        </button>
                     </div>
                 </div>
             </div>

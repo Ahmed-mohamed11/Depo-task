@@ -1,4 +1,10 @@
- const articlesData = [
+import { useEffect } from 'react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const articlesData = [
     {
         id: 1,
         title: "Community Forum",
@@ -36,7 +42,7 @@
 
 function ArticleItem({ title, description, details, linkText, linkUrl, bgColor, imageUrl, altText }) {
     return (
-        <li className="relative flex flex-col items-start bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105 hover:shadow-2xl">
+        <li className="relative flex flex-col items-start bg-white rounded-lg shadow-lg overflow-hidden transform transition article-card">
             <img
                 src={imageUrl}
                 alt={altText}
@@ -70,8 +76,26 @@ function ArticleItem({ title, description, details, linkText, linkUrl, bgColor, 
 }
 
 export default function Articles() {
+    useEffect(() => {
+        // GSAP ScrollTrigger Animation with rotation and scale effect for article cards
+        gsap.from('.article-card', {
+            scrollTrigger: {
+                trigger: '.article-card',
+                start: 'top 90%',
+                end: 'top 40%',
+                scrub: 1,
+                toggleActions: 'play none none reverse',
+            },
+            opacity: 0,
+            rotation: -30, // Starts slightly rotated
+            scale: 0.8, // Starts slightly scaled down
+            duration: 1.5,
+            ease: 'power2.out',
+        })
+    }, [])
+
     return (
-        <div className="mt-28  py-12">
+        <div className="mt-28 py-12">
             <div className="text-center">
                 <h1 className="text-4xl font-bold text-gray-800 mb-12">
                     Speedy Digital <br />Experience Creation

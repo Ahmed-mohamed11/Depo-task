@@ -12,7 +12,7 @@ export default function ContactForm() {
     });
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50 font-sans">
+        <div className="min-h-screen flex items-center justify-center p-4   font-sans">
             <div className="w-full max-w-2xl mx-auto">
                 <h1 className="text-4xl font-bold text-center mb-4">
                     <span className="text-black">Get in </span>

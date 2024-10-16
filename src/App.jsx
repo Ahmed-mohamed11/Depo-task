@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
 import "./App.scss";
- import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import { useI18nContext } from "./context/i18n-context";
 import HomePage from "./pages/home/index";
 import Error404Modern from "./pages/error/404-modern";
+import Profile from "./pages/profile/Profile"
 
 function App() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ function App() {
   const [reloadPage, setReloadPage] = useState(false);
   const { language } = useI18nContext();
 
-   useEffect(() => {
+  useEffect(() => {
     setLoading(true);
     const timeoutId = setTimeout(() => {
       setLoading(false);
@@ -32,7 +33,7 @@ function App() {
     localStorage.setItem("isDarkMode", !isDarkMode);
   };
 
-   useEffect(() => {
+  useEffect(() => {
     if (reloadPage) {
       window.location.reload();
       setReloadPage(false);
@@ -40,7 +41,7 @@ function App() {
   }, [reloadPage]);
 
   if (loading) {
-     return (
+    return (
       <div className="flex justify-center items-center gap-14 h-screen w-full fixed z-50 dark:bg-gray-900 bg-white">
         <div className="dot-spin"></div>
         <p className="text-lg font-medium dark:text-white">
@@ -55,21 +56,22 @@ function App() {
       <div className="flex">
         <div className="w-full">
           <Routes>
-             <Route
+            <Route
               path="/"
               element={
                 <>
-                   <Navbar toggleDark={toggleDarkMode} dark={isDarkMode} />
-                  <div className="">
+                  <Navbar toggleDark={toggleDarkMode} dark={isDarkMode} />
+                  <div className="pt-0 ">
                     <Routes>
                       <Route path="/" element={<HomePage />} />
-                     </Routes>
+                    </Routes>
                   </div>
                 </>
               }
             />
 
-             <Route path="*" element={<Error404Modern />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="*" element={<Error404Modern />} />
           </Routes>
         </div>
       </div>
