@@ -23,11 +23,11 @@ export default function Brands() {
     useEffect(() => {
         gsap.fromTo(
             ".brand-logo",
-            { opacity: 0, x: 100, rotate: 10 }, // Start state: invisible, slide from right, slight rotation
+            { opacity: 0, x: 100, rotate: 10 },  
             {
                 opacity: 1,
                 x: 0,
-                rotate: 0, // End state: fully visible, normal position
+                rotate: 0, 
                 ease: "power1.out",
                 duration: 2,
                 stagger: 0.3,

@@ -1,14 +1,14 @@
  import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import SlideImage from '../../images/gfx/tree-736885_640.jpg'
 function Clients() {
     const clients = [
-        { id: 1, image: "https://i.ibb.co/0jwHq2N/1.png", title: "Client 1" },
-        { id: 2, image: "https://i.ibb.co/0jwHq2N/1.png", title: "Client 2" },
-        { id: 3, image: "https://i.ibb.co/0jwHq2N/1.png", title: "Client 3" },
-        { id: 4, image: "https://i.ibb.co/0jwHq2N/1.png", title: "Client 4" },
-        { id: 5, image: "https://i.ibb.co/0jwHq2N/1.png", title: "Client 5" },
+        { id: 1, image: SlideImage, title: "Client 1" },
+        { id: 2, image: SlideImage, title: "Client 2" },
+        { id: 3, image: SlideImage, title: "Client 3" },
+        { id: 4, image: SlideImage, title: "Client 4" },
+        { id: 5, image: SlideImage, title: "Client 5" },
     ];
 
     const sliderSettings = {
@@ -28,7 +28,7 @@ function Clients() {
         return clients.map((client) => (
             <div key={client.id}>
                 <img
-                    className="img-fluid w-1/2 mx-auto rounded-full"
+                    className=" w-1/2 h-1/2 mx-auto rounded-full"
                     src={client.image}
                     alt={client.title}
                 />

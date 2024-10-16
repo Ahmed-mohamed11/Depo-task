@@ -19,20 +19,22 @@ export default function Features() {
     }
 
     useEffect(() => {
-        // GSAP ScrollTrigger Animations
-        gsap.from('.feature-card', {
-            scrollTrigger: {
-                trigger: '.feature-card',
-                start: 'top bottom',
-                end: 'top center',
-                scrub: true,
-                toggleActions: 'play none none reverse'
-            },
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: 'power2.out',
-        })
+        const featureCards = gsap.utils.toArray('.feature-card');
+        featureCards.forEach((card) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top bottom',
+                    end: 'top center',
+                    scrub: true,
+                    toggleActions: 'play none none reverse',
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: 'power2.out',
+            });
+        });
 
         gsap.from('.feature-preview', {
             scrollTrigger: {
@@ -66,8 +68,7 @@ export default function Features() {
     return (
         <div className="container mx-auto px-4 mt-12 pt-16">
             <div className="flex flex-col lg:flex-row gap-10 items-center justify-between">
-                {/* Feature Preview Card */}
-                <div dir='ltr' className="w-full lg:w-2/3 bg-blue-500 rounded-3xl overflow-hidden shadow-2xl feature-preview">
+                <div dir="ltr" className="w-full lg:w-2/3 bg-blue-500 rounded-3xl overflow-hidden shadow-2xl feature-preview">
                     <div className="bg-gray-900 text-white p-4">
                         <div className="flex gap-2">
                             <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -75,7 +76,7 @@ export default function Features() {
                             <div className="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
                     </div>
-                    <div className="flex ">
+                    <div className="flex">
                         <div className="w-1/4 bg-gray-900 text-white p-6">
                             <ul className="space-y-2 text-gray-400">
                                 <li className="hover:text-white cursor-pointer">Design</li>
@@ -104,7 +105,6 @@ export default function Features() {
                     </div>
                 </div>
 
-                {/* Features List */}
                 <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
                     <h2 className="text-4xl font-bold mb-10 text-gray-800 feature-header">Website Features</h2>
                     <ul className="space-y-4">
@@ -122,7 +122,6 @@ export default function Features() {
                                     <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform ${activeIndex === index ? 'rotate-180' : ''}`} />
                                 </div>
 
-                                {/* Dropdown Content */}
                                 {activeIndex === index && (
                                     <div className="mt-3 text-gray-600 text-sm">
                                         {feature.summary}
@@ -132,7 +131,6 @@ export default function Features() {
                         ))}
                     </ul>
                 </div>
-
             </div>
         </div>
     )

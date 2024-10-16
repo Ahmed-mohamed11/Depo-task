@@ -9,8 +9,7 @@ import Error404Modern from "./pages/error/404-modern";
  import { Outlet } from "react-router-dom";
  import User from "./pages/user/User";
   
-// Layout component to wrap the routes that should show the Navbar
-function Layout({ toggleDarkMode, isDarkMode }) {
+ function Layout({ toggleDarkMode, isDarkMode }) {
   return (
     <>
       <Navbar toggleDark={toggleDarkMode} dark={isDarkMode} />
@@ -30,25 +29,22 @@ function App() {
   const [reloadPage, setReloadPage] = useState(false);
   const { language } = useI18nContext();
 
-  // Simulate loading on initial mount
   useEffect(() => {
     setLoading(true);
     const timeoutId = setTimeout(() => {
       setLoading(false);
-    }, 600);
+    }, 100);
 
     return () => {
       clearTimeout(timeoutId);
     };
   }, [navigate]);
 
-  // Toggle dark mode and persist the preference
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
     localStorage.setItem("isDarkMode", !isDarkMode);
   };
 
-  // Handle page reload if necessary
   useEffect(() => {
     if (reloadPage) {
       window.location.reload();
@@ -59,9 +55,8 @@ function App() {
   if (loading) {
     return (
       <div className="flex justify-center items-center gap-14 h-screen w-full fixed z-50 dark:bg-gray-900 bg-white">
-        <div className="dot-spin"></div>
-        <p className="text-lg font-medium dark:text-white">
-          جاري التحميل ... كن صبورًا
+         <p className="text-lg font-medium dark:text-white">
+          Loading .... Be patient
         </p>
       </div>
     );

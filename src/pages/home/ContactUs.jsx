@@ -24,7 +24,6 @@ export default function ContactForm() {
                 <form className="bg-white rounded-3xl shadow-lg p-8 space-y-6">
                     <h2 className="text-lg font-semibold text-center mb-6">Fill in your details</h2>
 
-                    {/* Name Input */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
@@ -45,7 +44,6 @@ export default function ContactForm() {
                             </div>
                         </div>
 
-                        {/* Phone Input */}
                         <div>
                             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
                             <div className="relative">
@@ -66,7 +64,6 @@ export default function ContactForm() {
                         </div>
                     </div>
 
-                    {/* Email Input */}
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                         <div className="relative">
@@ -86,7 +83,6 @@ export default function ContactForm() {
                         </div>
                     </div>
 
-                    {/* Message Input */}
                     <div>
                         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                         <textarea
@@ -101,7 +97,6 @@ export default function ContactForm() {
                         ></textarea>
                     </div>
 
-                    {/* Submit Button */}
                     <div className="flex justify-center">
                         <button
                             type="submit"

@@ -1,5 +1,4 @@
-// import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+ import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
 
 const ratingsData = {
@@ -70,7 +69,7 @@ const Testimonials = () => {
 
      const tl = gsap.timeline({ repeat: -1, paused: true });
 
-    gsap.set(feedbackItems, { yPercent: 100 }); // Initial positioning off-screen
+    gsap.set(feedbackItems, { yPercent: 100 }); 
 
     tl.to(feedbackItems, {
       yPercent: -100,
@@ -103,8 +102,7 @@ const Testimonials = () => {
         <h1 className="text-2xl md:text-5xl font-bold mb-4">Online Business</h1>
         <p className="text-lg md:text-xl mb-8 opacity-90">We are here to help you grow Your Online Business</p>
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Average Rating Section */}
-          <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
+           <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl text-center font-bold mb-5 mt-5">Customer reviews about us</h2>
             <p className="text-gray-500 mb-6 text-center">
               Customer reviews play a vital role in influencing purchasing decisions, providing real perspectives from actual users. Positive reviews can boost credibility and build trust.
@@ -129,8 +127,7 @@ const Testimonials = () => {
             </div>
           </div>
 
-          {/* Customer Feedback Section with GSAP Smooth Infinite Scroll */}
-          <div className="w-full lg:w-1/2 overflow-hidden relative">
+           <div className="w-full lg:w-1/2 overflow-hidden relative">
             <div ref={feedbackContainerRef} className="space-y-6 animate-scroll-feedback">
               {customerFeedback.concat(customerFeedback).map((feedback, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-lg flex items-start">

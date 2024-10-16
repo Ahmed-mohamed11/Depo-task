@@ -31,7 +31,7 @@ const Navbar = ({ toggleDark, dark, onLogOut, themeDark }) => {
           <button className="relative p-1 rounded-full dark:bg-gray-900 dark:text-gray-400 hover:text-slate-500">
             <Bell className="h-6 w-6" />
           </button>
-          <Menu as="div" className="relative">
+          <Menu as="div" className="relative z-50">
             <Menu.Button className="relative flex rounded-full text-sm">
               <UserCircle className="h-6 w-6 dark:text-white" />
             </Menu.Button>

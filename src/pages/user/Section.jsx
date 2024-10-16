@@ -1,5 +1,3 @@
-
-// components/Section.js
 import { Pencil } from 'lucide-react';
 
 const Section = ({ title, children, onEdit }) => (

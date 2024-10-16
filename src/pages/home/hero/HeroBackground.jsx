@@ -1,4 +1,3 @@
-// HeroBackground.jsx
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import HeroImage from "../../../images/gfx/original-1dee8bfca65f223e60c259b7a32c6aad.png";
@@ -7,8 +6,16 @@ const HeroBackground = () => {
     useEffect(() => {
         gsap.fromTo(
             ".hero-background",
-            { scale: 0.95, opacity: 0.5 },
-            { scale: 1, opacity: 1, duration: 3, ease: "power3.out" }
+            {
+                scale: 0.95,
+                opacity: 0.5
+            },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 3,
+                ease: "power3.out"
+            }
         );
     }, []);
 

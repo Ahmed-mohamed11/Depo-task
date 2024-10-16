@@ -1,5 +1,4 @@
-// components/ProfileHeader.js
-import { MapPin } from 'lucide-react';
+ import { MapPin } from 'lucide-react';
 
 const ProfileHeader = ({ name, title, location }) => (
     <div className="flex items-center gap-5">

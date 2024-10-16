@@ -9,10 +9,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Store() {
     useEffect(() => {
-        // Smooth animation with scrub for the heading
         gsap.fromTo(
             ".store-heading",
-            { y: 100, opacity: 0 },
+            {
+                y: 100,
+                opacity: 0
+            },
             {
                 y: 0,
                 opacity: 1,
@@ -21,15 +23,17 @@ export default function Store() {
                     trigger: ".store-heading",
                     start: "top 80%",
                     end: "bottom 50%",
-                    scrub: true, // Sync animation with scroll
+                    scrub: true,
                 },
             }
         );
 
-        // Smooth animation with scrub for the paragraph
         gsap.fromTo(
             ".store-paragraph",
-            { y: 100, opacity: 0 },
+            {
+                y: 100,
+                opacity: 0
+            },
             {
                 y: 0,
                 opacity: 1,
@@ -38,15 +42,17 @@ export default function Store() {
                     trigger: ".store-paragraph",
                     start: "top 75%",
                     end: "bottom 50%",
-                    scrub: true, // Sync animation with scroll
+                    scrub: true,
                 },
             }
         );
 
-        // Smooth animation with scrub for the buttons
         gsap.fromTo(
             ".store-buttons img",
-            { scale: 0.8, opacity: 0 },
+            {
+                scale: 0.8,
+                opacity: 0
+            },
             {
                 scale: 1,
                 opacity: 1,
@@ -56,15 +62,17 @@ export default function Store() {
                     trigger: ".store-buttons",
                     start: "top 70%",
                     end: "bottom 50%",
-                    scrub: true, // Sync animation with scroll
+                    scrub: true,
                 },
             }
         );
 
-        // Smooth animation with scrub for the image
         gsap.fromTo(
             ".store-image",
-            { y: 100, opacity: 0 },
+            {
+                y: 100,
+                opacity: 0
+            },
             {
                 y: 0,
                 opacity: 1,
@@ -73,7 +81,7 @@ export default function Store() {
                     trigger: ".store-image",
                     start: "top 65%",
                     end: "bottom 50%",
-                    scrub: true, // Sync animation with scroll
+                    scrub: true,
                 },
             }
         );

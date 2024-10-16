@@ -1,13 +1,13 @@
-import Articles from '../home/Articles'
 import ContactUs from '../home/ContactUs'
 import Store from './Store'
 import Opinions from './Opinions'
 import Footer from './Footer'
 import Brands from './Brands'
 import Clients from './Clients'
-import Work from "./Work"
+import ProjectManager from "./ProjectManager"
 import Features from './Features'
 import Hero from './hero/Hero'
+import Articles from './article/Articles'
 
 export default function index() {
     return (
@@ -22,10 +22,10 @@ export default function index() {
                 <Features />
                 <Clients />
                 <Articles />
-                <Work />
+                <ProjectManager />
                 <ContactUs />
             </div>
-                <Footer />
+            <Footer />
         </>
     )
 }
