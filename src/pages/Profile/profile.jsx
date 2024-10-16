@@ -92,8 +92,8 @@ export default function EnhancedUserProfile() {
                     <main className="flex-1 space-y-6">
                         <Section title="Profile" onEdit={() => console.log('Edit profile')}>
                             <ProfileHeader
-                                name="Jack Adams"
-                                title="Product Designer"
+                                name="Hamada habiby 😘"
+                                title="Front-end Developer"
                                 location="Los Angeles, California, USA"
                             />
                         </Section>
